@@ -3,26 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
+    <title>Random Card Generator - Tailwind</title>
     <link rel="shortcut icon" href="./4geeks.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 flex flex-wrap items-center justify-center gap-4 bg-green-700"
+    >
+      <div
+        class="relative flex h-[500px] w-[300px] items-center justify-center rounded-lg bg-white"
+      >
+        <div class="card-value text-8xl"><!--CardValue--></div>
+
+        <div class="card-suit absolute left-4 top-4 text-6xl text-red-500">
+          <!--CardSuit-->
+        </div>
+
+        <div
+          class="card-suit absolute bottom-4 right-4 rotate-180 text-6xl text-red-500"
+        >
+          <!--CardSuit-->
+        </div>
       </div>
     </div>
   </body>
