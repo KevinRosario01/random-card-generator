@@ -22,9 +22,42 @@
     <div
       class="position-absolute top-0 bottom-0 start-0 end-0 bg-success d-flex justify-content-center align-items-center"
     >
+      <div class="d-flex flex-column align-items-center gap-3 mb-5">
+        <div class="d-flex flex-column align-items-center gap-3">
+          <div class="d-flex flex-column align-items-start me-5">
+            <label for="width" class="text-white mb-2">Card Width (px):</label>
+            <input type="number" id="width" class="form-control" value="400" />
+          </div>
+          <div class="d-flex flex-column align-items-start me-5">
+            <label for="height" class="text-white mb-2"
+              >Card Height (px):</label
+            >
+            <input type="number" id="height" class="form-control" value="500" />
+          </div>
+        </div>
+        <button
+          id="updateSize"
+          class="btn btn-primary mt-3 align-self-start ms-5"
+        >
+          Update Size
+        </button>
+      </div>
       <div
+        id="timer"
+        class="position-absolute top-0 start-50 translate-middle-x text-white display-3 mt-3"
+      >
+        Next card in: 10s
+      </div>
+      <button
+        id="myButton"
+        class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-3"
+      >
+        Random Card
+      </button>
+      <div
+        id="card"
         class="position-relative bg-white rounded-3 d-flex justify-content-center align-items-center"
-        style="width: 200px; height: 300px"
+        style="width: 400px; height: 500px"
       >
         <div class="card-value display-1 fw-bold position-absolute">
           <!-- Card Value-->

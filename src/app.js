@@ -7,21 +7,8 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-
-  const cardValue = document.querySelector(".card-value");
-  cardValue.innerHTML = pickCard();
-
-  const cardSuits = document.querySelectorAll(".card-suit");
-  let suit = pickSuit();
-  cardSuits.forEach(cardSuit => {
-    cardSuit.innerHTML = suit;
-    if (suit === "♦" || suit === "♥") {
-      cardSuit.style.color = "red";
-    }
-  });
-
-  console.log("Suit: " + pickSuit());
-  console.log("Card: " + pickCard());
+  updateCard();
+  startTimer();
 };
 
 function pickSuit() {
@@ -58,3 +45,66 @@ function pickCard() {
 
   return numToCard[card];
 }
+
+function updateCard() {
+  let suit = pickSuit();
+  let card = pickCard();
+
+  const cardValue = document.querySelector(".card-value");
+  const cardSuits = document.querySelectorAll(".card-suit");
+
+  cardValue.innerHTML = card;
+
+  cardSuits.forEach(cardSuit => {
+    cardSuit.innerHTML = suit;
+    if (suit === "♦" || suit === "♥") {
+      cardSuit.style.color = "red";
+    } else {
+      cardSuit.style.color = "black";
+    }
+  });
+
+  console.log("Suit: " + suit);
+  console.log("Card: " + card);
+}
+
+const button = document.getElementById("myButton");
+
+button.addEventListener("click", () => {
+  updateCard();
+});
+
+function updateTimer(seconds) {
+  const timer = document.getElementById("timer");
+  timer.innerHTML = `Next card in: ${seconds}s`;
+}
+
+function startTimer() {
+  let countdown = 10;
+  updateTimer(countdown);
+
+  setInterval(() => {
+    updateCard();
+    countdown = 10;
+    updateTimer(countdown);
+  }, 10000);
+
+  setInterval(() => {
+    countdown--;
+    updateTimer(countdown);
+  }, 1000);
+}
+
+function updateCardSize() {
+  const width = document.getElementById("width").value;
+  const height = document.getElementById("height").value;
+  const card = document.getElementById("card");
+  card.style.width = `${width}px`;
+  card.style.height = `${height}px`;
+}
+
+const update = document.getElementById("updateSize");
+
+update.addEventListener("click", () => {
+  updateCardSize();
+});
